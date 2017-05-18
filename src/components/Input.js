@@ -23,7 +23,7 @@ export default class Input extends Component {
     return(
       <form onSubmit={this.handleSumbit} className='column'>
         <label htmlFor='city'>
-            <h3>Please Select City</h3>
+            {/* <h3>Please Select City</h3> */}
         </label>
         <input id='city' value={this.state.city} onChange={this.handleChange}/>
         <Link className='button' to={{

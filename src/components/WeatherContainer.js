@@ -20,9 +20,9 @@ export default class WeatherContainer extends Component{
     render(){
         return (
             <div>
-
-                {!this.state.loading ? <Weather city={this.state.location} /> : '<p>Loadig...</p>'}
-
+                {!this.state.loading ?
+                    <Weather  city={this.state.location} /> :
+                    '<p>Loadig...</p>'}
             </div>
         )
     }

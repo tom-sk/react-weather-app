@@ -7,7 +7,7 @@ function currentWeather(city){
 }
 
 function fiveDay(city){
-    return axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=  ' + city + APIKey + '&cnt=5' );
+    return axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=  ' + city + APIKey + '&cnt=6' );
 }
 
 module.exports = {

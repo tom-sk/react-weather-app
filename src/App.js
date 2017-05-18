@@ -14,8 +14,6 @@ class App extends Component {
 
         <Router>
             <div>
-            {/* <img src={require('./image.jpg')} alt=""/> */}
-
                 <Route exact path="/" component={LocationInput}/>
                 <Route exact path="/weather" component={WeatherContainer}/>
             </div>

@@ -37,18 +37,25 @@ export default class Weather extends Component {
     }
     render() {
         var {loading, weather, forecast, tempCalc, locationTime} = this.state;
-        return (
-            <div className="App">
-                {!loading ? <WeatherInformation
-                                location={locationTime}
-                                weather={weather}
-                                tempCalc={tempCalc}
-                                changeTemp={this.changeTemp}/> :
-                                    <p>Loading...</p>}
 
-                {!loading ? forecast.data.list.map((listItem, index)=>{
-                    return <Forecast key={index} forecast={listItem} tempCalc={tempCalc}/>
-                }) : ''}
+        return (
+            <div className="weather-container">
+                {!loading ?
+                    <WeatherInformation
+                        location={locationTime}
+                        weather={weather}
+                        tempCalc={tempCalc}
+                        changeTemp={this.changeTemp}/> :
+                    <p>Loading...</p>}
+
+
+                <div className='forecast-container'>
+                    {!loading ?
+                        forecast.data.list.filter((el,i)=>(i > 0 ? el : '' )).map((listItem, index)=>{
+                            return <Forecast key={index} forecast={listItem} tempCalc={tempCalc}/>
+                    }) : ''}
+                </div>
+
 
             </div>
         );

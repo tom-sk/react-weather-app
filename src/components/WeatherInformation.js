@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import momentTZ from 'moment-timezone';
+import Clock from './Clock.js';
 
 export default class WeatherInformation extends Component {
     constructor(){
@@ -14,12 +14,15 @@ export default class WeatherInformation extends Component {
     }
     render() {
         var {location} = this.state;
-
+        var icon = this.props.weather.data.weather[0].icon;
         return (
             <div className="weather-info">
+
+
                 <div>{this.props.weather.data.name}</div>
-                <div>{momentTZ().tz(location.data.timeZoneId).format("HH:mm")}</div>
+                <Clock time={location.data.timeZoneId} />
                 <div>{this.props.weather.data.weather[0].main}</div>
+                <div><img src={require('../images/weather-icons/' + icon + '.svg')} alt=""/></div>
 
                 {this.props.tempCalc ?
                     <div>{Math.floor(this.props.weather.data.main.temp - 273.15) }°C</div> :
