@@ -21,13 +21,13 @@ export default class Input extends Component {
   }
   render(){
     return(
-      <form onSubmit={this.handleSumbit}>
+      <form onSubmit={this.handleSumbit} className='column'>
         <label htmlFor='city'>
-          Label
+            <h3>Please Select City</h3>
         </label>
         <input id='city' value={this.state.city} onChange={this.handleChange}/>
-        <Link to={{
-            pathname:'/test',
+        <Link className='button' to={{
+            pathname:'/weather',
             search: '?city=' + this.state.city}} type='sumbit'>Sumbit</Link>
       </form>
     )

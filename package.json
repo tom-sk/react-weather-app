@@ -9,7 +9,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
-    "reactable": "^0.14.1"
+    "reactable": "^0.14.1",
+    "url-loader": "^0.5.8"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
