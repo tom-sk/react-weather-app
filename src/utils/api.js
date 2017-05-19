@@ -16,7 +16,12 @@ module.exports = {
         },
         getTimeLocation(long, lat){
             var APIKey = 'AIzaSyC6fSNUMEi7ZJjT_w739zBKKAuwf4Q9gso';
-
             return axios.get('https://maps.googleapis.com/maps/api/timezone/json?location='+ long + ',' + lat + '&timestamp=1458000000&key=' + APIKey);
+        },
+        getGeoLocation(lat, lon){
+            var APIKey = 'AIzaSyC6fSNUMEi7ZJjT_w739zBKKAuwf4Q9gso';
+
+            return axios.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat +',' + lon +'&key=' + APIKey);
         }
+
 }

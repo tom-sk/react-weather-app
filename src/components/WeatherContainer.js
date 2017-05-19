@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import queryString from 'query-string';
 import Weather from './Weather'
 
+
 export default class WeatherContainer extends Component{
     constructor(){
         super();
@@ -10,7 +11,7 @@ export default class WeatherContainer extends Component{
             loading: true
         }
     }
-    componentDidMount(){
+    componentWillMount(){
         const parsed = queryString.parse(location.search);
         this.setState({
             location: parsed.city,
@@ -20,9 +21,7 @@ export default class WeatherContainer extends Component{
     render(){
         return (
             <div className='mobile-container'>
-                {!this.state.loading ?
-                    <Weather  city={this.state.location} /> :
-                    '<p>Loadig...</p>'}
+                <Weather  city={this.state.location} />
             </div>
         )
     }

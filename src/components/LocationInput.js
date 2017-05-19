@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Input from './Input.js';
 import api from '../utils/api.js';
-
+import GeoLocation from './GeoLocation.js';
 export default class LocationInput extends Component {
     constructor(){
       super();
@@ -18,9 +18,8 @@ export default class LocationInput extends Component {
     render() {
       return (
         <div className='mobile-container'>
-          {this.state.city}
-          <Input onSubmit={this.handleSubmit}/>
-
+            <Input onSubmit={this.handleSubmit}/>
+            <GeoLocation />
         </div>
       )
     }

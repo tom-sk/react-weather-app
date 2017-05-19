@@ -3,6 +3,7 @@ import axios from 'axios';
 import api from '../utils/api.js';
 import WeatherInformation from './WeatherInformation.js';
 import Forecast from './Forecast.js';
+import Loading from './Loading'
 
 export default class Weather extends Component {
     constructor(props){
@@ -46,7 +47,7 @@ export default class Weather extends Component {
                         weather={weather}
                         tempCalc={tempCalc}
                         changeTemp={this.changeTemp}/> :
-                    <p>Loading...</p>}
+                    <Loading />}
 
                 <div className='forecast-container'>
                     {!loading ?
