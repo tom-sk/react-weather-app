@@ -19,7 +19,7 @@ export default class WeatherContainer extends Component{
     }
     render(){
         return (
-            <div>
+            <div className='mobile-container'>
                 {!this.state.loading ?
                     <Weather  city={this.state.location} /> :
                     '<p>Loadig...</p>'}

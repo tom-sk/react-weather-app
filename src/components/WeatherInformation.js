@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Clock from './Clock.js';
+import {Link} from 'react-router-dom';
 
 export default class WeatherInformation extends Component {
     constructor(){
@@ -17,12 +18,14 @@ export default class WeatherInformation extends Component {
         var icon = this.props.weather.data.weather[0].icon;
         return (
             <div className="weather-info">
+                <Link to='/' type='sumbit'><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
 
 
-                <div>{this.props.weather.data.name}</div>
+                <div className='location-name'>{this.props.weather.data.name}</div>
                 <Clock time={location.data.timeZoneId} />
+                <div className='main-weather-icon' ><img src={require('../images/weather-icons/' + icon + '.svg')} alt=""/></div>
                 <div>{this.props.weather.data.weather[0].main}</div>
-                <div><img src={require('../images/weather-icons/' + icon + '.svg')} alt=""/></div>
+
 
                 {this.props.tempCalc ?
                     <div>{Math.floor(this.props.weather.data.main.temp - 273.15) }°C</div> :

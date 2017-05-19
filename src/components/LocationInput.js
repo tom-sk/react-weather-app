@@ -17,7 +17,7 @@ export default class LocationInput extends Component {
     }
     render() {
       return (
-        <div>
+        <div className='mobile-container'>
           {this.state.city}
           <Input onSubmit={this.handleSubmit}/>
 

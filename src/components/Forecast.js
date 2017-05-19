@@ -15,8 +15,10 @@ export default class WeatherInformation extends Component {
                 {this.props.tempCalc ?
                     <div>{Math.floor(this.props.forecast.temp.day - 273.15) }°C</div> :
                     <div>{Math.floor(((this.props.forecast.temp.day - 273.15) * 9/5)  + 32)}°F</div> }
-
-                <img src={require('../images/weather-icons/' + icon + '.svg')} alt=""/>
+                    
+                <div className="img-container">
+                    <img src={require('../images/weather-icons/' + icon + '.svg')} alt=""/>
+                </div>
             </div>
         );
     }

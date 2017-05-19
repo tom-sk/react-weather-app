@@ -48,15 +48,12 @@ export default class Weather extends Component {
                         changeTemp={this.changeTemp}/> :
                     <p>Loading...</p>}
 
-
                 <div className='forecast-container'>
                     {!loading ?
                         forecast.data.list.filter((el,i)=>(i > 0 ? el : '' )).map((listItem, index)=>{
-                            return <Forecast key={index} forecast={listItem} tempCalc={tempCalc}/>
+                            return <Forecast className='forecast-item' key={index} forecast={listItem} tempCalc={tempCalc}/>
                     }) : ''}
                 </div>
-
-
             </div>
         );
     }
