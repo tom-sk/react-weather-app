@@ -13,12 +13,12 @@ export default class GeoLocation extends Component {
     componentWillMount(){
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition((position)=>{
-              
+
               api.getGeoLocation(position.coords.latitude, position.coords.longitude).then((response)=>{
                   this.setState({
-                      city:response.data.results[0].address_components[4].long_name
+                      city:response.data.results[8].formatted_address
                   })
-                //   console.log(response.data.results[0].address_components[4].long_name)
+                //   console.log(response.data.results[8].formatted_address)
               });
 
           })

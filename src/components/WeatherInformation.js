@@ -11,7 +11,7 @@ export default class WeatherInformation extends Component {
     }
     componentWillMount(){
         this.setState({location: this.props.location})
-
+        console.log(this.props.weather.data.sys.country);
     }
     render() {
         var {location} = this.state;
@@ -21,7 +21,7 @@ export default class WeatherInformation extends Component {
                 <Link to='/' type='sumbit'><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
 
 
-                <div className='location-name'>{this.props.weather.data.name}</div>
+                <div className='location-name'>{this.props.weather.data.name}, {this.props.weather.data.sys.country}</div>
                 <Clock time={location.data.timeZoneId} />
                 <div className='main-weather-icon' ><img src={require('../images/weather-icons/' + icon + '.svg')} alt=""/></div>
                 <div>{this.props.weather.data.weather[0].main}</div>
