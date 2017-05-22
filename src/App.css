@@ -63,6 +63,18 @@ align-items: center;*/
     align-items: center;
     justify-content: center;
 }
+.temp-convert-button * {
+    font-size: 20px;
+    display:inline-block;
+    cursor:pointer;
+}
+.temp-convert-button button{
+
+    border:none;
+    background: none;
+    outline: none;
+    padding:0;
+}
 .weather-container{
     position:relative;
     width:100%;
